@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        ul{
+            margin-left: 70px;
+        }
+        li{
+            display: inline;
+            list-style-type: none;
+        }
+        #replace{
+            margin-left: 100px;
+        }
+        p{
+            /*clear: both;*/
+            display: block;
+            color:gray;
+            margin-left: 80px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h2>美女画廊</h2>
+    <ul>
+        <li><a href="image/11.jpg" title="动漫"><img src="image/11.jpg" height="80" width="80"></a> </li>
+        <li><a href="image/boy.jpg" title="男孩"><img src="image/boy.jpg" height="80" width="80"></a> </li>
+        <li><a href="image/map.jpg" title="模特"><img src="image/map.jpg" height="80" width="80"></a> </li>
+    </ul>
+
+</div>
+<img id="replace" src="image/400x250.png" width="400px;">
+<p id="ti">选择一张图片</p >
+</div>
+
+<script type="text/javascript">
+    var ch=document.getElementById("replace");
+    var t = document.getElementById("ti");
+    var links=document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+        var link=links[i];
+        link.onclick=function(){
+            console.log(link.href);
+            t.innerText=link.title;
+            ch.src=this.href;
+            return false;
+        };
+//        links[i].onclick=function () {
+//            //console.log(i);
+//            t.innerText=this.title;
+//            ch.src=this.href;
+//            console.log("succ");
+//            return false;
+//        }
+    }
+
+</script>
+</body>
+</html>
